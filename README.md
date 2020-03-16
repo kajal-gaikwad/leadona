@@ -1,19 +1,27 @@
-# README
+# Leadona
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [Leadona](https://leadona.wgbl.co/) is a lead generation web application.
 
-Things you may want to cover:
+Initialize the project:
 
-* Ruby version
+* If you're using rvm - Install rvm 1.29.9 (This is optional step)
+
+* Ruby version ruby-2.6.2
+
+* Rails version 6.0.2.1
 
 * System dependencies
+  nodejs - v12.16.1
 
 * Configuration
+  cp config/database.yml.example config/database.yml
+  cp config/master.key.example config/master.key
 
 * Database creation
+  rake db:create
 
 * Database initialization
+  rake db:migrate
 
 * How to run the test suite
 
@@ -21,4 +29,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* 
