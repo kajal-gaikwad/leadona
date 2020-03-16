@@ -19,7 +19,7 @@ verify_signatures: false
 gemfile: Gemfile
 PreCommit:
   RuboCop:
-    enabled: false
+    enabled: true
     on_warn: fail
     description: 'Analyze with RuboCop'
     required_executable: 'rubocop'
@@ -34,19 +34,19 @@ PreCommit:
       - '**/Rakefile'
 
   RailsBestPractices:
-    enabled: false
+    enabled: true
     description: 'Analyze with RailsBestPractices'
     required_executable: 'rails_best_practices'
     flags: ['--without-color']
     install_command: 'gem install rails_best_practices'
 
   TrailingWhitespace:
-    enabled: false
+    enabled: true
     exclude:
       - '**/db/structure.sql' # Ignore trailing whitespace in generated files
 
   CssLint:
-    enabled: false
+    enabled: true
     description: 'Analyze with csslint'
     required_executable: 'csslint'
     flags: ['--quiet', '--format=compact']
@@ -54,12 +54,12 @@ PreCommit:
     include: '**/*.css'
 
   CaseConflicts:
-    enabled: false
+    enabled: true
     description: 'Check for case-insensitivity conflicts'
     quiet: false
 
   EsLint:
-    enabled: false
+    enabled: true
     description: 'Analyze with ESLint'
     required_executable: 'eslint'
     flags: ['--format=compact']
@@ -67,26 +67,26 @@ PreCommit:
     include: '**/*.js'
 
   CaseConflicts:
-    enabled: false
+    enabled: true
     description: 'Check for case-insensitivity conflicts'
     quiet: false
 
   HtmlHint:
-    enabled: false
+    enabled: true
     description: 'Analyze with HTMLHint'
     required_executable: 'htmlhint'
     install_command: 'npm install -g htmlhint'
     include: '**/*.html'
 
   HtmlTidy:
-    enabled: false
+    enabled: true
     description: 'Analyze HTML with tidy'
     required_executable: 'tidy'
     flags: ['-errors', '-quiet', '-utf8']
     include: '**/*.html'
 
   ImageOptim:
-    enabled: false
+    enabled: true
     description: 'Check for optimizable images'
     required_executable: 'image_optim'
     install_command: 'gem install image_optim'
@@ -98,7 +98,7 @@ PreCommit:
       - '**/*.svg'
 
   JsHint:
-    enabled: false
+    enabled: true
     description: 'Analyze with JSHint'
     required_executable: 'jshint'
     flags: ['--verbose']
@@ -106,7 +106,7 @@ PreCommit:
     include: '**/*.js'
 
   JsLint:
-    enabled: false
+    enabled: true
     description: 'Analyze with JSLint'
     required_executable: 'jslint'
     flags: ['--terse']
@@ -114,14 +114,14 @@ PreCommit:
     include: '**/*.js'
 
   MergeConflicts:
-    enabled: false
+    enabled: true
     description: 'Check for merge conflicts'
     quiet: false
     required_executable: 'grep'
     flags: ['-IHn', "^<<<<<<<[ \t]"]
 
   YamlSyntax:
-    enabled: false
+    enabled: true
     description: 'Check YAML syntax'
     required_library: 'yaml'
     include:
@@ -129,7 +129,7 @@ PreCommit:
       - '**/*.yml'
 
   Stylelint:
-    enabled: false
+    enabled: true
     description: 'Check styles with Stylelint'
     require_executable: 'stylelint'
     flags: ['-f', 'compact']
