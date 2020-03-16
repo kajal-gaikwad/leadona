@@ -6,12 +6,13 @@ Initialize the project:
 
 * If you're using rvm - Install rvm 1.29.9 (This is optional step)
 
-* Ruby version ruby-2.6.2
+* Ruby version ruby-2.6.2 (patch 2.6.2-p47)
 
 * Rails version 6.0.2.1
 
 * System dependencies
   nodejs - v12.16.1
+  Postgres version 9.5
 
 * Configuration
   cp config/database.yml.example config/database.yml
