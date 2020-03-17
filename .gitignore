@@ -47,3 +47,4 @@ bower.json
 config/secrets.yml
 config/database.yml
 .rspec
+.yardoc/*

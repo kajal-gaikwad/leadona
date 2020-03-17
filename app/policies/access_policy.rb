@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # @author Datt Dongare
 class AccessPolicy # Handles access of an user
   # @param user [User] the user object
@@ -10,7 +8,7 @@ class AccessPolicy # Handles access of an user
   end
 
   # Tells us whether an user is a admin or not
-  # @return boolean
+  # @return [Boolean]
   def admin?
     @user.admin?
   end

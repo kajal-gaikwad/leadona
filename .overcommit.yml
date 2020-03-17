@@ -18,6 +18,11 @@ verify_signatures: false
 
 gemfile: Gemfile
 PreCommit:
+  ALL:
+    exclude: &default_excludes
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+      - 'doc/**/*'
   RuboCop:
     enabled: true
     on_warn: fail
@@ -43,6 +48,9 @@ PreCommit:
   TrailingWhitespace:
     enabled: true
     exclude:
+      - 'node_modules/**/*'
+      - 'vendor/**/*'
+      - 'doc/**/*'
       - '**/db/structure.sql' # Ignore trailing whitespace in generated files
 
   CssLint:
@@ -52,6 +60,7 @@ PreCommit:
     flags: ['--quiet', '--format=compact']
     install_command: 'npm install -g csslint'
     include: '**/*.css'
+    exclude: 'doc/**/*'
 
   CaseConflicts:
     enabled: true
@@ -65,6 +74,7 @@ PreCommit:
     flags: ['--format=compact']
     install_command: 'npm install -g eslint'
     include: '**/*.js'
+    exclude: 'doc/**/*'
 
   CaseConflicts:
     enabled: true
@@ -77,6 +87,7 @@ PreCommit:
     required_executable: 'htmlhint'
     install_command: 'npm install -g htmlhint'
     include: '**/*.html'
+    exclude: 'doc/**/*'
 
   HtmlTidy:
     enabled: true
@@ -84,6 +95,7 @@ PreCommit:
     required_executable: 'tidy'
     flags: ['-errors', '-quiet', '-utf8']
     include: '**/*.html'
+    exclude: 'doc/**/*'
 
   ImageOptim:
     enabled: true
@@ -104,6 +116,7 @@ PreCommit:
     flags: ['--verbose']
     install_command: 'npm install -g jshint'
     include: '**/*.js'
+    exclude: 'doc/**/*'
 
   JsLint:
     enabled: true
@@ -112,6 +125,7 @@ PreCommit:
     flags: ['--terse']
     install_command: 'npm install -g jslint'
     include: '**/*.js'
+    exclude: 'doc/**/*'
 
   MergeConflicts:
     enabled: true
@@ -134,6 +148,7 @@ PreCommit:
     require_executable: 'stylelint'
     flags: ['-f', 'compact']
     install_command: 'npm install -g stylelint'
+    exclude: 'doc/**/*'
     include:
       - '**/*.scss'
       - '**/*.css'
