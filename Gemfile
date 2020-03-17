@@ -12,7 +12,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 # Use Puma as the app server
+gem 'premailer-rails'
 gem 'puma', '~> 4.1'
+gem 'pundit'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use SCSS for stylesheets
@@ -31,7 +33,7 @@ gem 'webpacker', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'yard'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console
@@ -45,6 +47,7 @@ group :development do
   gem 'pre-commit', require: false
   gem 'rails_best_practices'
   gem 'rubocop', require: false
+  # gem 'rubocop-rails', require: false
   # Spring speeds up development by keeping your application running in the bg.
   # Read more: https://github.com/rails/spring
   gem 'spring'
