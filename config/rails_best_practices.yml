@@ -23,8 +23,8 @@ ProtectMassAssignmentCheck: { }
 RemoveEmptyHelpersCheck: { }
 #RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
-RemoveUnusedMethodsInControllersCheck: { ignored_files: ['app/controllers'] }
-# RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
+RemoveUnusedMethodsInControllersCheck: { ignored_files: '*' }
+RemoveUnusedMethodsInHelpersCheck: { ignored_files: '*' }
 RemoveUnusedMethodsInModelsCheck: { except_methods: [] }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }
 ReplaceInstanceVariableWithLocalVariableCheck: { }

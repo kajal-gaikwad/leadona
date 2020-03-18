@@ -44,6 +44,8 @@ PreCommit:
     required_executable: 'rails_best_practices'
     flags: ['--without-color']
     install_command: 'gem install rails_best_practices'
+    exclude:
+      - 'app/controllers/*'
 
   TrailingWhitespace:
     enabled: true
