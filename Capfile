@@ -7,7 +7,7 @@ unless ENV['RAILS_ENV'] == 'staging'
 end
 require 'capistrano/rails/migrations'
 require 'capistrano/rvm'
-require 'capistrano/sidekiq'
+# require 'capistrano/sidekiq'
 require 'capistrano/puma'
 install_plugin Capistrano::Puma
 # require 'capistrano/sidekiq/monit'

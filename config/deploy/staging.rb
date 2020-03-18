@@ -6,7 +6,7 @@
 set :user, 'deploy'
 set :deploy_via, :remote_cache
 set :use_sudo, false
-set :branch, 'staging'
+set :branch, 'deploy'
 
 server '15.206.139.171', user: 'deploy', roles: %w{web app db}
 
@@ -43,10 +43,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 set :keep_releases, 3
 
 after 'deploy:publishing', 'deploy:restart'
-after 'deploy:starting', 'sidekiq:stop'
-after 'deploy:updated', 'sidekiq:stop'
-after 'deploy:reverted', 'sidekiq:stop'
-after 'deploy:published', 'sidekiq:start'
+# after 'deploy:starting', 'sidekiq:stop'
+# after 'deploy:updated', 'sidekiq:stop'
+# after 'deploy:reverted', 'sidekiq:stop'
+# after 'deploy:published', 'sidekiq:start'
 # after 'deploy:updated', 'deploy:symlink_uploads'
 
 namespace :deploy do
