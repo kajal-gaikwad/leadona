@@ -2,9 +2,9 @@
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/bundler'
-unless ENV['RAILS_ENV'] == 'staging'
-  require 'capistrano/rails/assets'
-end
+# unless ENV['RAILS_ENV'] == 'staging'
+require 'capistrano/rails/assets'
+# end
 require 'capistrano/rails/migrations'
 require 'capistrano/rvm'
 # require 'capistrano/sidekiq'
