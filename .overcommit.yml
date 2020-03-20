@@ -55,15 +55,6 @@ PreCommit:
       - 'doc/**/*'
       - '**/db/structure.sql' # Ignore trailing whitespace in generated files
 
-  CssLint:
-    enabled: true
-    description: 'Analyze with csslint'
-    required_executable: 'csslint'
-    flags: ['--quiet', '--format=compact']
-    install_command: 'npm install -g csslint'
-    include: '**/*.css'
-    exclude: 'doc/**/*'
-
   CaseConflicts:
     enabled: true
     description: 'Check for case-insensitivity conflicts'
@@ -74,7 +65,7 @@ PreCommit:
     description: 'Analyze with ESLint'
     required_executable: 'eslint'
     flags: ['--format=compact']
-    install_command: 'npm install -g eslint'
+    install_command: 'yarn global add eslint'
     include: '**/*.js'
     exclude: 'doc/**/*'
 
@@ -87,7 +78,7 @@ PreCommit:
     enabled: true
     description: 'Analyze with HTMLHint'
     required_executable: 'htmlhint'
-    install_command: 'npm install -g htmlhint'
+    install_command: 'yarn global add htmlhint'
     include: '**/*.html'
     exclude: 'doc/**/*'
 
@@ -131,8 +122,11 @@ PreCommit:
     description: 'Check styles with Stylelint'
     require_executable: 'stylelint'
     flags: ['-f', 'compact']
-    install_command: 'npm install -g stylelint'
-    exclude: 'doc/**/*'
+    install_command: 'yarn global add stylelint stylelint-config-standard --save-dev'
+    exclude:
+      - 'doc/**/*'
+      - '**/bootstrap.min.css'
+      - '**/adminator.scss'
     include:
       - '**/*.scss'
       - '**/*.css'
