@@ -30,7 +30,7 @@ set :assets_roles, []
 set :use_sudo, false
 set :bundle_binstubs, nil
 # if ENV['RAILS_ENV'] == 'staging'
-Rake::Task['deploy:assets:precompile'].clear_actions
+# Rake::Task['deploy:compile_assets'].clear_actions
 # end
 Rake::Task['puma:restart'].clear_actions
 
