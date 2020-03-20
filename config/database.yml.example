@@ -12,7 +12,7 @@ default: &default
   timeout: 5000
   username: postgres
   host: localhost
-  password: yourpgpassword
+  password: root 	#yourpgpassword
   port: 5432
 
 development:
