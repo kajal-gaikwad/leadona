@@ -10,6 +10,7 @@ gem 'active_decorator', github: 'amatsuda/active_decorator', branch: 'master'
 gem 'bootsnap', '>= 1.4.2', require: false
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem 'nokogiri'
 gem 'pg'
 # Use Puma as the app server
 gem 'premailer-rails'
