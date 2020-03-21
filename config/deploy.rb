@@ -2,7 +2,6 @@
 # lock '3.9.1'
 
 set :application, 'leadona'
-set :scm, :git
 set :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :repo_url, 'git@gitlab.com:wgbl/leadona.git'
 set :rvm_ruby_version, 'ruby-2.6.2'
@@ -43,7 +42,7 @@ namespace :deploy do
   after  :finishing,    :cleanup
 end
 
-namespace :puma_leadona do
+namespace :puma_service do
   %w[start stop restart].each do |command|
     desc "#{command} Puma server."
     task command do

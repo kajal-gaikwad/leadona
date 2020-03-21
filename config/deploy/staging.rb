@@ -12,10 +12,10 @@ server '15.206.139.171', user: 'deploy', roles: %w{web app db}
 
 set :deploy_to, '/var/www/leadona'
 
+set :assets_roles, [:web, :app]
 role :app, %w{deploy@15.206.139.171}
 role :web, %w{deploy@15.206.139.171}
 role :db,  %w{deploy@15.206.139.171}
-
 
 set :ssh_options, {
   keys: %w(~/.ssh/id_rsa),
@@ -43,6 +43,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 set :keep_releases, 3
 
 after 'deploy:publishing', 'deploy:restart'
+after 'deploy:migrate', 'deploy:compile_assets'
 # after 'deploy:starting', 'sidekiq:stop'
 # after 'deploy:updated', 'sidekiq:stop'
 # after 'deploy:reverted', 'sidekiq:stop'
@@ -51,11 +52,11 @@ after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
   task :restart do
-    invoke 'puma_leadona:stop'
-    invoke 'puma_leadona:start'
+    invoke 'puma_service:stop'
+    invoke 'puma_service:start'
   end
 
   task :stop do
-    invoke 'puma_leadona:stop'
+    invoke 'puma_service:stop'
   end
 end

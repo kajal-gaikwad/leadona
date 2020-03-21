@@ -47,11 +47,11 @@ after 'deploy:published', 'sidekiq:start'
 
 namespace :deploy do
   task :restart do
-    invoke 'puma_leadona:stop'
-    invoke 'puma_leadona:start'
+    invoke 'puma_service:stop'
+    invoke 'puma_service:start'
   end
 
   task :stop do
-    invoke 'puma_leadona:stop'
+    invoke 'puma_service:stop'
   end
 end
