@@ -6,7 +6,7 @@
 set :user, 'deploy'
 set :deploy_via, :remote_cache
 set :use_sudo, false
-set :branch, 'deploy'
+set :branch, 'admin-layout'
 
 server '15.206.139.171', user: 'deploy', roles: %w{web app db}
 
