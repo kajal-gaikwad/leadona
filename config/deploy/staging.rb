@@ -43,7 +43,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 set :keep_releases, 3
 
 after 'deploy:publishing', 'deploy:restart'
-after 'deploy:migrate', 'deploy:compile_assets'
+# after 'deploy:migrate', 'deploy:compile_assets'
 # after 'deploy:starting', 'sidekiq:stop'
 # after 'deploy:updated', 'sidekiq:stop'
 # after 'deploy:reverted', 'sidekiq:stop'

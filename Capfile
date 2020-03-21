@@ -2,7 +2,11 @@
 require 'capistrano/setup'
 require 'capistrano/deploy'
 # unless ENV['RAILS_ENV'] == 'staging'
-require 'capistrano/rails'
+
+require 'capistrano/bundler'
+# require 'capistrano/rails/assets'
+require 'capistrano/local_precompile'
+require 'capistrano/rails/migrations'
 # end
 require 'capistrano/rvm'
 # require 'capistrano/sidekiq'
