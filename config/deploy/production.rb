@@ -6,15 +6,15 @@
 set :user, 'deploy'
 set :deploy_via, :remote_cache
 set :use_sudo, false
-set :branch, 'master'
+set :branch, 'deploy'
 
-server '15.206.139.171', user: 'deploy', roles: %w{web app db}
+server '13.127.251.27', user: 'deploy', roles: %w{web app db}
 
 set :deploy_to, '/var/www/leadona'
 
-role :app, %w{deploy@15.206.139.171}
-role :web, %w{deploy@15.206.139.171}
-role :db,  %w{deploy@15.206.139.171}
+role :app, %w{deploy@13.127.251.27}
+role :web, %w{deploy@13.127.251.27}
+role :db,  %w{deploy@13.127.251.27}
 
 
 set :ssh_options, {
@@ -40,10 +40,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :keep_releases, 10
 
 after 'deploy:publishing', 'deploy:restart'
-after 'deploy:starting', 'sidekiq:stop'
-after 'deploy:updated', 'sidekiq:stop'
-after 'deploy:reverted', 'sidekiq:stop'
-after 'deploy:published', 'sidekiq:start'
+# after 'deploy:starting', 'sidekiq:stop'
+# after 'deploy:updated', 'sidekiq:stop'
+# after 'deploy:reverted', 'sidekiq:stop'
+# after 'deploy:published', 'sidekiq:start'
 
 namespace :deploy do
   task :restart do

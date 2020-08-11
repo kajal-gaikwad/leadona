@@ -1,3 +1,6 @@
-/*
-*= require adminator
-*/
+@import 'admin/spec/settings/index';
+@import 'admin/spec/tools/index';
+@import 'bootstrap/scss/bootstrap';
+@import 'admin/spec/index';
+@import 'admin/vendor/index';
+

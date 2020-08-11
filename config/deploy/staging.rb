@@ -8,14 +8,20 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :branch, 'admin-layout'
 
-server '15.206.139.171', user: 'deploy', roles: %w{web app db}
+server '13.127.251.27', user: 'deploy', roles: %w{web app db}
 
 set :deploy_to, '/var/www/leadona'
 
+<<<<<<< HEAD
 set :assets_roles, [:web, :app]
 role :app, %w{deploy@15.206.139.171}
 role :web, %w{deploy@15.206.139.171}
 role :db,  %w{deploy@15.206.139.171}
+=======
+role :app, %w{deploy@13.127.251.27}
+role :web, %w{deploy@13.127.251.27}
+role :db,  %w{deploy@13.127.251.27}
+>>>>>>> 146c663b3b6bc131cf1e6b87f154c87f0c5ec8d8
 
 set :ssh_options, {
   keys: %w(~/.ssh/id_rsa),
