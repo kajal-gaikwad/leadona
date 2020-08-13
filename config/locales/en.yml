@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  authorization:
+    error: "You don't have access to requested resource."
+  form:
+    delete:
+      confirm: "Are you sure? This can't be undone"

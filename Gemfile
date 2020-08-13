@@ -34,6 +34,7 @@ gem 'webpacker', '~> 4.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'devise'
 gem 'yard'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
