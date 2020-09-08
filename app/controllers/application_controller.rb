@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
     return 'plain' if devise_controller?
     'application'
   end
+  
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   devise_for :users, skip: [:sessions]
   as :user do
     get 'login', to: 'devise/sessions#new', as: :new_user_session
@@ -7,8 +8,8 @@ Rails.application.routes.draw do
   end
   root to: "home#index"
   namespace :admin do
-    root to: "dashboard#index"
-    resources :dashboard, only: [:index]
+    # root to: "dashboards#index"
+    resources :dashboards, only: [:index]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
