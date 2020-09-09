@@ -1,9 +1,7 @@
 ActiveAdmin.register Country do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
+  menu parent: 'Main Menu', priority: 3
+
   permit_params :name, :code, :active, country_group_ids: []
   index do  
     selectable_column
@@ -32,7 +30,7 @@ ActiveAdmin.register Country do
       f.input :name
       f.input :code
       f.input :active
-      f.input :country_group_ids, as: :tags, collection: CountryGroup.all, display_name: :name
+      f.input :country_group_ids, label: 'Country Group Name', as: :tags, collection: CountryGroup.all, display_name: :name
     end
     f.actions
   end

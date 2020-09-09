@@ -1,11 +1,8 @@
 ActiveAdmin.register Area do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :name, :active, :country_id, :state_id, :city_id, :region_id, :pincode_id
+  menu parent: 'Main Menu', priority: 8
+
+  permit_params :name, :active, :code, :country_id, :state_id, :city_id, :region_id, :pincode_id
   index do
     selectable_column
     column :city do |c|

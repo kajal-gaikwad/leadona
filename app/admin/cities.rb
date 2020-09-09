@@ -1,10 +1,7 @@
 ActiveAdmin.register City do
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
+  menu parent: 'Main Menu', priority: 5
+
   permit_params :name, :active, :country_id, :state_id
   index do
    selectable_column
