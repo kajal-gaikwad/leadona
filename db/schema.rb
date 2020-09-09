@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_072616) do
+ActiveRecord::Schema.define(version: 2020_09_09_102744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,34 @@ ActiveRecord::Schema.define(version: 2020_09_09_072616) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.bigint "region_id", null: false
+    t.bigint "pincode_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_areas_on_city_id"
+    t.index ["country_id"], name: "index_areas_on_country_id"
+    t.index ["pincode_id"], name: "index_areas_on_pincode_id"
+    t.index ["region_id"], name: "index_areas_on_region_id"
+    t.index ["state_id"], name: "index_areas_on_state_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_cities_on_country_id"
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "countries", force: :cascade do |t|
@@ -58,6 +86,42 @@ ActiveRecord::Schema.define(version: 2020_09_09_072616) do
     t.index ["country_group_type_id"], name: "index_country_groups_on_country_group_type_id"
   end
 
+  create_table "pincodes", force: :cascade do |t|
+    t.string "code"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_pincodes_on_city_id"
+    t.index ["country_id"], name: "index_pincodes_on_country_id"
+    t.index ["state_id"], name: "index_pincodes_on_state_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_regions_on_city_id"
+    t.index ["country_id"], name: "index_regions_on_country_id"
+    t.index ["state_id"], name: "index_regions_on_state_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_states_on_country_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,5 +136,19 @@ ActiveRecord::Schema.define(version: 2020_09_09_072616) do
     t.index ["role"], name: "index_users_on_role"
   end
 
+  add_foreign_key "areas", "cities"
+  add_foreign_key "areas", "countries"
+  add_foreign_key "areas", "pincodes"
+  add_foreign_key "areas", "regions"
+  add_foreign_key "areas", "states"
+  add_foreign_key "cities", "countries"
+  add_foreign_key "cities", "states"
   add_foreign_key "country_groups", "country_group_types"
+  add_foreign_key "pincodes", "cities"
+  add_foreign_key "pincodes", "countries"
+  add_foreign_key "pincodes", "states"
+  add_foreign_key "regions", "cities"
+  add_foreign_key "regions", "countries"
+  add_foreign_key "regions", "states"
+  add_foreign_key "states", "countries"
 end
