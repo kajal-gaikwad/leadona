@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  head: false
+  subdomain: MyString
+  entity_id: 1
+
+two:
+  name: MyString
+  head: false
+  subdomain: MyString
+  entity_id: 1
