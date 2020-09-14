@@ -30,7 +30,7 @@ ActiveAdmin.setup do |config|
   # will namespace routes to /hello_world/*
   #
   # To set no namespace by default, use:
-  #   config.default_namespace = false
+    # config.default_namespace = false
   #
   # Default:
   # config.default_namespace = :admin
@@ -117,7 +117,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'dashboards#index'
 
   # == Admin Comments
   #
@@ -230,12 +230,12 @@ ActiveAdmin.setup do |config|
   #
   # To change the default utility navigation to show a link to your website & a logout btn
   #
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :utility_navigation do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #       admin.add_logout_button_to_menu menu
-  #     end
-  #   end
+    config.namespace :admin do |admin|
+      admin.build_menu :utility_navigation do |menu|
+        menu.add label: "Main Dashboard", url: "/admin"
+        admin.add_logout_button_to_menu menu
+      end
+    end
   # #
   # If you wanted to add a static menu item to the default menu provided:
   #
