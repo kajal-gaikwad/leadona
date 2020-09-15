@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_124254) do
+ActiveRecord::Schema.define(version: 2020_09_15_121704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,23 @@ ActiveRecord::Schema.define(version: 2020_09_14_124254) do
     t.boolean "active"
     t.boolean "verified"
     t.string "registration_type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "business_galleries", force: :cascade do |t|
+    t.string "name"
+    t.text "desciption"
+    t.string "galleryable_type"
+    t.integer "galleryable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["galleryable_type", "galleryable_id"], name: "index_business_galleries_on_galleryable_type_and_galleryable_id"
+  end
+
+  create_table "business_gallery_media", force: :cascade do |t|
+    t.string "caption"
+    t.integer "gallery_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

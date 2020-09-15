@@ -1,12 +1,15 @@
 ActiveAdmin.register Business::Entity do
   menu parent: 'Business'
   
-  permit_params :name, :active, :verified, :description, :registration_type_id
+  permit_params :name, :active, :verified, :description, :registration_type_id, :galleryable_type, :galleryable_id
  
   index do  
     selectable_column
     column :registration_type do |c|
       c.registration_type
+    end
+    column :galleryable do |e|
+      e.galleries
     end
     column :name 
     column :active
@@ -20,6 +23,9 @@ ActiveAdmin.register Business::Entity do
     attributes_table do
       row :registration_type do |c|
         c.registration_type
+      end
+      row :galleryable do |e|
+        e.galleries
       end
       row :name   
       row :active

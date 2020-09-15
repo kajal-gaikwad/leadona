@@ -1,12 +1,15 @@
 ActiveAdmin.register Business::Branch do
   menu parent: 'Business'
   
-  permit_params :name, :head, :subdomain, :entity_id
+  permit_params :name, :head, :subdomain, :entity_id, :galleryable_type, :galleryable_id
  
   index do  
     selectable_column
     column :entity do |c|
       c.entity
+    end
+    column :galleryable do |e|
+      e.galleries
     end
     column :name
     column :head
@@ -19,6 +22,9 @@ ActiveAdmin.register Business::Branch do
     attributes_table do
       row :entity do |c|
         c.entity
+      end
+      row :galleryable do |e|
+        e.galleries
       end
       row :name
       row :head
