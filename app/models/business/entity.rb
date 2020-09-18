@@ -3,6 +3,7 @@ class Business::Entity < ApplicationRecord
   has_many :infos
   has_many :branches
   has_many :galleries, as: :galleryable
+  has_many :working_hours, as: :workable
 
   validates :name, uniqueness: true
   validates :registration_type_id, uniqueness: true

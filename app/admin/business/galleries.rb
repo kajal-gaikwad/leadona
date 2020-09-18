@@ -10,8 +10,12 @@ ActiveAdmin.register Business::Gallery do
     actions
   end
 
+
   show do
     attributes_table do
+      row :entity do |c|
+        c.entity
+      end
       row :name
       row :desciption
     end

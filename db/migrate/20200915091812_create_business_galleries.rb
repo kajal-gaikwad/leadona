@@ -2,7 +2,7 @@ class CreateBusinessGalleries < ActiveRecord::Migration[6.0]
   def change
     create_table :business_galleries do |t|
       t.string :name
-      t.text :desciption
+      t.text :description
       t.string :galleryable_type
       t.integer :galleryable_id
 

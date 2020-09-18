@@ -1,14 +1,15 @@
 ActiveAdmin.register Business::GalleryMedia do
   menu parent: 'Business'
   
-  permit_params :caption, :gallery_id
+  permit_params :caption, :gallery_id, :image
  
   index do  
     selectable_column
     column :gallery do |c|
       c.gallery
     end
-    column :caption 
+    column :caption
+    column :image 
     actions
   end
 
@@ -19,7 +20,17 @@ ActiveAdmin.register Business::GalleryMedia do
         c.gallery
       end
       row :caption
+      row :image
     end
     active_admin_comments
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :caption
+      f.input :gallery
+      f.input :image, as: :file
+    end
+    f.actions
   end
 end
