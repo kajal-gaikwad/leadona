@@ -35,10 +35,16 @@ ActiveAdmin.register Area do
     end
     active_admin_comments
   end
-  # permit_params do
-  #   permitted = [:name, :active, :country_id, :state_id, :city_id, :region_id, :pincode_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+  form html: { multipart: true } do |f|
+    f.inputs do
+      f.input :country, label: 'Country', as: :select, member_label: :name
+      f.input :state, label: 'State', as: :select, member_label: :name
+      f.input :city, label: 'City', as: :select, member_label: :name
+      f.input :region, label: 'Region', as: :select, member_label: :name
+      f.input :pincode, label: 'Pincode', as: :select, member_label: :code
+      f.input :name
+      f.input :active, as: :boolean
+    end
+    f.actions
+  end
 end

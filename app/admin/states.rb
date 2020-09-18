@@ -20,15 +20,10 @@ ActiveAdmin.register State do
        c.country.name
      end
      row :name
-     row :code    
+     row :code
      row :active
    end
    active_admin_comments
  end
-  # permit_params do
-  #   permitted = [:name, :code, :active, :country_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+
 end

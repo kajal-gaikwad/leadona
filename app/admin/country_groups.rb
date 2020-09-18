@@ -23,10 +23,4 @@ ActiveAdmin.register CountryGroup do
    end
  end
 
-  # permit_params do
-  #   permitted = [:name, :active, :country_group_type_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
 end

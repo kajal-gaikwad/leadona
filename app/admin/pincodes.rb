@@ -35,10 +35,5 @@ ActiveAdmin.register Pincode do
    end
    active_admin_comments
  end
-  # permit_params do
-  #   permitted = [:code, :active, :country_id, :state_id, :city_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+
 end

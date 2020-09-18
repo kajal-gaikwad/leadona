@@ -3,7 +3,7 @@ class City < ApplicationRecord
   has_many :regions
   has_many :areas
   belongs_to :country
-  belongs_to :state
+  belongs_to :state, optional: true
 
   validates :name,
     presence: true,
