@@ -1,5 +1,6 @@
 class Business::RegistrationType < ApplicationRecord
   has_many :entities
   
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
+  validates :description, presence: true 
 end

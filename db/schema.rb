@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_105229) do
+ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,23 @@ ActiveRecord::Schema.define(version: 2020_09_17_105229) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "areas", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.bigint "region_id", null: false
+    t.bigint "pincode_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_areas_on_city_id"
+    t.index ["country_id"], name: "index_areas_on_country_id"
+    t.index ["pincode_id"], name: "index_areas_on_pincode_id"
+    t.index ["region_id"], name: "index_areas_on_region_id"
+    t.index ["state_id"], name: "index_areas_on_state_id"
+  end
+
   create_table "business_branches", force: :cascade do |t|
     t.string "name"
     t.boolean "head"
@@ -73,7 +90,7 @@ ActiveRecord::Schema.define(version: 2020_09_17_105229) do
 
   create_table "business_entities", force: :cascade do |t|
     t.string "name"
-    t.text "desciption"
+    t.text "description"
     t.boolean "active"
     t.boolean "verified"
     t.string "registration_type_id"
@@ -83,7 +100,7 @@ ActiveRecord::Schema.define(version: 2020_09_17_105229) do
 
   create_table "business_galleries", force: :cascade do |t|
     t.string "name"
-    t.text "desciption"
+    t.text "description"
     t.string "galleryable_type"
     t.integer "galleryable_id"
     t.datetime "created_at", precision: 6, null: false
@@ -158,6 +175,82 @@ ActiveRecord::Schema.define(version: 2020_09_17_105229) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_cities_on_country_id"
+    t.index ["state_id"], name: "index_cities_on_state_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.boolean "active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "countries_country_groups", id: false, force: :cascade do |t|
+    t.bigint "country_id", null: false
+    t.bigint "country_group_id", null: false
+  end
+
+  create_table "country_group_types", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "country_groups", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_group_type_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_group_type_id"], name: "index_country_groups_on_country_group_type_id"
+  end
+
+  create_table "pincodes", force: :cascade do |t|
+    t.string "code"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_pincodes_on_city_id"
+    t.index ["country_id"], name: "index_pincodes_on_country_id"
+    t.index ["state_id"], name: "index_pincodes_on_state_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.bigint "state_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_regions_on_city_id"
+    t.index ["country_id"], name: "index_regions_on_country_id"
+    t.index ["state_id"], name: "index_regions_on_state_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.boolean "active"
+    t.bigint "country_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_states_on_country_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -173,4 +266,19 @@ ActiveRecord::Schema.define(version: 2020_09_17_105229) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "areas", "cities"
+  add_foreign_key "areas", "countries"
+  add_foreign_key "areas", "pincodes"
+  add_foreign_key "areas", "regions"
+  add_foreign_key "areas", "states"
+  add_foreign_key "cities", "countries"
+  add_foreign_key "cities", "states"
+  add_foreign_key "country_groups", "country_group_types"
+  add_foreign_key "pincodes", "cities"
+  add_foreign_key "pincodes", "countries"
+  add_foreign_key "pincodes", "states"
+  add_foreign_key "regions", "cities"
+  add_foreign_key "regions", "countries"
+  add_foreign_key "regions", "states"
+  add_foreign_key "states", "countries"
 end

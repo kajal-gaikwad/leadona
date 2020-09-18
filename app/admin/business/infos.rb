@@ -1,7 +1,7 @@
 ActiveAdmin.register Business::Info do
   menu parent: 'Business'
   
-  permit_params :website, :entity_id, :image
+  permit_params :website, :entity_id, :logo
  
   index do  
     selectable_column
@@ -20,7 +20,7 @@ ActiveAdmin.register Business::Info do
         c.entity
       end
       row :website
-      row :image
+      row :logo
     end
     active_admin_comments
   end
@@ -29,7 +29,7 @@ ActiveAdmin.register Business::Info do
     f.inputs do
       f.input :website
       f.input :entity
-      f.input :image, as: :file
+      f.input :logo, as: :file
     end
     f.actions
   end

@@ -4,5 +4,4 @@ class Business::Category < ApplicationRecord
   has_and_belongs_to_many :sub_categories
 
   validates :name, presence: true, uniqueness: true, format: PATH_REGEX
-
 end
