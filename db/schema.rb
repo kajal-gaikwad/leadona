@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
     t.bigint "state_id", null: false
     t.bigint "city_id", null: false
