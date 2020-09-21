@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
     t.bigint "state_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.string "code"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,18 +68,20 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
   create_table "countries_country_groups", id: false, force: :cascade do |t|
     t.bigint "country_id", null: false
     t.bigint "country_group_id", null: false
+    t.index ["country_group_id", "country_id"], name: "country_group_country"
+    t.index ["country_id", "country_group_id"], name: "country_country_group"
   end
 
   create_table "country_group_types", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "country_groups", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_group_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -88,7 +90,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
 
   create_table "pincodes", force: :cascade do |t|
     t.string "code"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
     t.bigint "state_id", null: false
     t.bigint "city_id", null: false
@@ -101,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
     t.bigint "state_id", null: false
     t.bigint "city_id", null: false
@@ -115,7 +117,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "code"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
