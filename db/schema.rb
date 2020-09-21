@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
     t.string "name"
     t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.bigint "city_id", null: false
-    t.bigint "region_id", null: false
-    t.bigint "pincode_id", null: false
+    t.bigint "region_id"
+    t.bigint "pincode_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_areas_on_city_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
     t.string "name"
     t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_cities_on_country_id"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
     t.string "code"
     t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.bigint "city_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_102744) do
     t.string "name"
     t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.bigint "city_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

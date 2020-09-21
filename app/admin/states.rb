@@ -6,7 +6,7 @@ ActiveAdmin.register State do
   index do
    selectable_column
    column :country do |c|
-     c.country.name
+     c.country
    end
    column :name
    column :code
@@ -17,7 +17,7 @@ ActiveAdmin.register State do
  show do
    attributes_table do
      row :country do |c|
-       c.country.name
+       c.country
      end
      row :name
      row :code

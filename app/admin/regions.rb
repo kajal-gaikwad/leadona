@@ -6,13 +6,13 @@ ActiveAdmin.register Region do
   index do
     selectable_column
     column :country do |c|
-      c.country.name
+      c.country
     end
     column :state do |c|
-      c.state.name
+      c.state
     end
     column :city do |c|
-      c.city.name
+      c.city
     end
     column :name
     column :active
@@ -22,13 +22,13 @@ ActiveAdmin.register Region do
   show do
     attributes_table do
       row :country do |c|
-        c.country.name
+        c.country
       end
       row :state do |c|
-        c.state.name
+        c.state
       end
       row :city do |c|
-        c.city.name
+        c.city
       end
       row :name
       row :active

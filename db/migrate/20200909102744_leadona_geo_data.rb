@@ -41,7 +41,7 @@ class LeadonaGeoData < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :active, default: true
       t.references :country, null: false, foreign_key: true, index: true
-      t.references :state, null: false, foreign_key: true, index: true
+      t.references :state, null: true, foreign_key: true, index: true
 
       t.timestamps
     end
@@ -50,7 +50,7 @@ class LeadonaGeoData < ActiveRecord::Migration[6.0]
       t.string :code
       t.boolean :active, default: true
       t.references :country, null: false, foreign_key: true, index: true
-      t.references :state, null: false, foreign_key: true, index: true
+      t.references :state, null: true, foreign_key: true, index: true
       t.references :city, null: false, foreign_key: true, index: true
 
       t.timestamps
@@ -60,7 +60,7 @@ class LeadonaGeoData < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :active, default: true
       t.references :country, null: false, foreign_key: true, index: true
-      t.references :state, null: false, foreign_key: true, index: true
+      t.references :state, null: true, foreign_key: true, index: true
       t.references :city, null: false, foreign_key: true, index: true
 
       t.timestamps
@@ -70,10 +70,10 @@ class LeadonaGeoData < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :active, default: true
       t.references :country, null: false, foreign_key: true, index: true
-      t.references :state, null: false, foreign_key: true, index: true
+      t.references :state, null: true, foreign_key: true, index: true
       t.references :city, null: false, foreign_key: true, index: true
-      t.references :region, null: false, foreign_key: true, index: true
-      t.references :pincode, null: false, foreign_key: true, index: true
+      t.references :region, null: true, foreign_key: true, index: true
+      t.references :pincode, null: true, foreign_key: true, index: true
 
       t.timestamps
     end
