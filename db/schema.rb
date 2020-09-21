@@ -153,7 +153,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "business_sub_categories", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

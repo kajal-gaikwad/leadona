@@ -3,5 +3,5 @@ class CountryGroup < ApplicationRecord
   has_and_belongs_to_many :countries
   accepts_nested_attributes_for :country_group_type
   
-  validates :name,presence: true,uniqueness: true
+  validates :name, presence: true, uniqueness: true
 end
