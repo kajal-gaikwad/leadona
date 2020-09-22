@@ -6,7 +6,7 @@ ActiveAdmin.register State do
   index do
    selectable_column
    column :country do |c|
-     c.country.name
+     c.country
    end
    column :name
    column :code
@@ -17,18 +17,13 @@ ActiveAdmin.register State do
  show do
    attributes_table do
      row :country do |c|
-       c.country.name
+       c.country
      end
      row :name
-     row :code    
+     row :code
      row :active
    end
    active_admin_comments
  end
-  # permit_params do
-  #   permitted = [:name, :code, :active, :country_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+
 end

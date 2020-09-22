@@ -52,12 +52,12 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.bigint "city_id", null: false
-    t.bigint "region_id", null: false
-    t.bigint "pincode_id", null: false
+    t.bigint "region_id"
+    t.bigint "pincode_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_areas_on_city_id"
@@ -177,9 +177,9 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_cities_on_country_id"
@@ -189,7 +189,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.string "code"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -197,18 +197,20 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
   create_table "countries_country_groups", id: false, force: :cascade do |t|
     t.bigint "country_id", null: false
     t.bigint "country_group_id", null: false
+    t.index ["country_group_id", "country_id"], name: "country_group_country"
+    t.index ["country_id", "country_group_id"], name: "country_country_group"
   end
 
   create_table "country_group_types", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "country_groups", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_group_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -217,9 +219,9 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "pincodes", force: :cascade do |t|
     t.string "code"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.bigint "city_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -230,9 +232,9 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
-    t.bigint "state_id", null: false
+    t.bigint "state_id"
     t.bigint "city_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -244,7 +246,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "code"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.bigint "country_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -254,7 +256,6 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "role", default: 0, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -262,7 +263,6 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["role"], name: "index_users_on_role"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

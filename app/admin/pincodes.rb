@@ -6,13 +6,13 @@ ActiveAdmin.register Pincode do
   index do
    selectable_column
    column :country do |c|
-     c.country.name
+     c.country
    end
    column :state do |c|
-     c.state.name
+     c.state
    end
    column :city do |c|
-     c.city.name
+     c.city
    end
    column :code
    column :active
@@ -22,23 +22,18 @@ ActiveAdmin.register Pincode do
  show do
    attributes_table do
      row :country do |c|
-       c.country.name
+       c.country
      end
      row :state do |c|
-       c.state.name
+       c.state
      end
      row :city do |c|
-       c.city.name
+       c.city
      end
      row :code
      row :active
    end
    active_admin_comments
  end
-  # permit_params do
-  #   permitted = [:code, :active, :country_id, :state_id, :city_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
+
 end

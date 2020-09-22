@@ -6,13 +6,13 @@ ActiveAdmin.register Area do
   index do
     selectable_column
     column :city do |c|
-      c.city.name
+      c.city
     end
     column :region do |c|
-      c.region.name
+      c.region
     end
     column :pincode do |c|
-      c.pincode.code
+      c.pincode
     end
     column :name
     column :active
@@ -22,23 +22,17 @@ ActiveAdmin.register Area do
   show do
     attributes_table do
       row :city do |c|
-        c.city.name
+        c.city
       end
       row :region do |c|
-        c.region.name
+        c.region
       end
       row :pincode do |c|
-        c.pincode.code
+        c.pincode
       end
       row :name
       row :active
     end
     active_admin_comments
   end
-  # permit_params do
-  #   permitted = [:name, :active, :country_id, :state_id, :city_id, :region_id, :pincode_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
 end

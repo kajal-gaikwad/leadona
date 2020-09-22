@@ -8,12 +8,18 @@ class State < ApplicationRecord
   belongs_to :country
 
   validates :name,
-    presence: true,
+    allow_blank: true,
     uniqueness: true,
     length: { minimum: 3, maximum: 30 }
 
   validates :code,
-    presence: true,
+    allow_blank: true,
     length: { minimum: 2 },
     format: CODE_REGEX
+
+  before_save :uppercase_code
+
+  def uppercase_code
+    code.upcase!
+  end
 end
