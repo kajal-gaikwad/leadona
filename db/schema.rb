@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "business_categories", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
     t.integer "entity_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["entity_id"], name: "index_business_infos_on_entity_id"
   end
 
   create_table "business_proof_types", force: :cascade do |t|
