@@ -1,0 +1,237 @@
+{
+  "admin.js": "/packs/js/admin-d6bd971fc9324bab695f.js",
+  "admin.js.map": "/packs/js/admin-d6bd971fc9324bab695f.js.map",
+  "admin/charts/chartJS/index.js": "/packs/js/admin/charts/chartJS/index-b69a0eff6c1b12cf6402.js",
+  "admin/charts/chartJS/index.js.map": "/packs/js/admin/charts/chartJS/index-b69a0eff6c1b12cf6402.js.map",
+  "admin/charts/easyPieChart/index.js": "/packs/js/admin/charts/easyPieChart/index-fcef1af596a214c22fd8.js",
+  "admin/charts/easyPieChart/index.js.map": "/packs/js/admin/charts/easyPieChart/index-fcef1af596a214c22fd8.js.map",
+  "admin/charts/index.js": "/packs/js/admin/charts/index-751e6d84dac598422d26.js",
+  "admin/charts/index.js.map": "/packs/js/admin/charts/index-751e6d84dac598422d26.js.map",
+  "admin/charts/sparkline/index.js": "/packs/js/admin/charts/sparkline/index-501e029f18a04ee39f78.js",
+  "admin/charts/sparkline/index.js.map": "/packs/js/admin/charts/sparkline/index-501e029f18a04ee39f78.js.map",
+  "admin/chat/index.js": "/packs/js/admin/chat/index-4c993f645348f85163d5.js",
+  "admin/chat/index.js.map": "/packs/js/admin/chat/index-4c993f645348f85163d5.js.map",
+  "admin/constants/colors.js": "/packs/js/admin/constants/colors-33e20fe4cd8ab496ad73.js",
+  "admin/constants/colors.js.map": "/packs/js/admin/constants/colors-33e20fe4cd8ab496ad73.js.map",
+  "admin/datatable/index.js": "/packs/js/admin/datatable/index-6baa1351c6f1875d2ada.js",
+  "admin/datatable/index.js.map": "/packs/js/admin/datatable/index-6baa1351c6f1875d2ada.js.map",
+  "admin/datepicker/index.js": "/packs/js/admin/datepicker/index-e3e6a708331eb1676511.js",
+  "admin/datepicker/index.js.map": "/packs/js/admin/datepicker/index-e3e6a708331eb1676511.js.map",
+  "admin/email/index.js": "/packs/js/admin/email/index-bc7fa64d34ca53781aca.js",
+  "admin/email/index.js.map": "/packs/js/admin/email/index-bc7fa64d34ca53781aca.js.map",
+  "admin/fullcalendar/index.js": "/packs/js/admin/fullcalendar/index-e9ef8dbe3108a90d041e.js",
+  "admin/fullcalendar/index.js.map": "/packs/js/admin/fullcalendar/index-e9ef8dbe3108a90d041e.js.map",
+  "admin/googleMaps/index.js": "/packs/js/admin/googleMaps/index-feb5cd78aa3d0abb07ea.js",
+  "admin/googleMaps/index.js.map": "/packs/js/admin/googleMaps/index-feb5cd78aa3d0abb07ea.js.map",
+  "admin/masonry/index.js": "/packs/js/admin/masonry/index-420a599399c7ea1fc1e9.js",
+  "admin/masonry/index.js.map": "/packs/js/admin/masonry/index-420a599399c7ea1fc1e9.js.map",
+  "admin/popover/index.js": "/packs/js/admin/popover/index-f5bbb13e9cb6b2dfc0a7.js",
+  "admin/popover/index.js.map": "/packs/js/admin/popover/index-f5bbb13e9cb6b2dfc0a7.js.map",
+  "admin/scrollbar/index.js": "/packs/js/admin/scrollbar/index-fbcfce9c53c377681999.js",
+  "admin/scrollbar/index.js.map": "/packs/js/admin/scrollbar/index-fbcfce9c53c377681999.js.map",
+  "admin/search/index.js": "/packs/js/admin/search/index-c1f9d371901b8e6872f5.js",
+  "admin/search/index.js.map": "/packs/js/admin/search/index-c1f9d371901b8e6872f5.js.map",
+  "admin/sidebar/index.js": "/packs/js/admin/sidebar/index-3c33b78126376f9cd1f6.js",
+  "admin/sidebar/index.js.map": "/packs/js/admin/sidebar/index-3c33b78126376f9cd1f6.js.map",
+  "admin/skycons/index.js": "/packs/js/admin/skycons/index-f8f3be9217835dff747e.js",
+  "admin/skycons/index.js.map": "/packs/js/admin/skycons/index-f8f3be9217835dff747e.js.map",
+  "admin/utils/index.js": "/packs/js/admin/utils/index-def1f45e32bc521cb530.js",
+  "admin/utils/index.js.map": "/packs/js/admin/utils/index-def1f45e32bc521cb530.js.map",
+  "admin/vectorMaps/index.js": "/packs/js/admin/vectorMaps/index-585154b62c88ac353a2d.js",
+  "admin/vectorMaps/index.js.map": "/packs/js/admin/vectorMaps/index-585154b62c88ac353a2d.js.map",
+  "admin/vectorMaps/jquery-jvectormap-world-mill.js": "/packs/js/admin/vectorMaps/jquery-jvectormap-world-mill-1d9d72f24c5a45d00f22.js",
+  "admin/vectorMaps/jquery-jvectormap-world-mill.js.map": "/packs/js/admin/vectorMaps/jquery-jvectormap-world-mill-1d9d72f24c5a45d00f22.js.map",
+  "application.js": "/packs/js/application-3209d4ad18c80d015d7d.js",
+  "application.js.map": "/packs/js/application-3209d4ad18c80d015d7d.js.map",
+  "custom.js": "/packs/js/custom-4888e71ee0769c9780dd.js",
+  "custom.js.map": "/packs/js/custom-4888e71ee0769c9780dd.js.map",
+  "entrypoints": {
+    "admin": {
+      "js": [
+        "/packs/js/admin-d6bd971fc9324bab695f.js"
+      ],
+      "js.map": [
+        "/packs/js/admin-d6bd971fc9324bab695f.js.map"
+      ]
+    },
+    "admin/charts/chartJS/index": {
+      "js": [
+        "/packs/js/admin/charts/chartJS/index-b69a0eff6c1b12cf6402.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/charts/chartJS/index-b69a0eff6c1b12cf6402.js.map"
+      ]
+    },
+    "admin/charts/easyPieChart/index": {
+      "js": [
+        "/packs/js/admin/charts/easyPieChart/index-fcef1af596a214c22fd8.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/charts/easyPieChart/index-fcef1af596a214c22fd8.js.map"
+      ]
+    },
+    "admin/charts/index": {
+      "js": [
+        "/packs/js/admin/charts/index-751e6d84dac598422d26.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/charts/index-751e6d84dac598422d26.js.map"
+      ]
+    },
+    "admin/charts/sparkline/index": {
+      "js": [
+        "/packs/js/admin/charts/sparkline/index-501e029f18a04ee39f78.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/charts/sparkline/index-501e029f18a04ee39f78.js.map"
+      ]
+    },
+    "admin/chat/index": {
+      "js": [
+        "/packs/js/admin/chat/index-4c993f645348f85163d5.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/chat/index-4c993f645348f85163d5.js.map"
+      ]
+    },
+    "admin/constants/colors": {
+      "js": [
+        "/packs/js/admin/constants/colors-33e20fe4cd8ab496ad73.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/constants/colors-33e20fe4cd8ab496ad73.js.map"
+      ]
+    },
+    "admin/datatable/index": {
+      "js": [
+        "/packs/js/admin/datatable/index-6baa1351c6f1875d2ada.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/datatable/index-6baa1351c6f1875d2ada.js.map"
+      ]
+    },
+    "admin/datepicker/index": {
+      "js": [
+        "/packs/js/admin/datepicker/index-e3e6a708331eb1676511.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/datepicker/index-e3e6a708331eb1676511.js.map"
+      ]
+    },
+    "admin/email/index": {
+      "js": [
+        "/packs/js/admin/email/index-bc7fa64d34ca53781aca.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/email/index-bc7fa64d34ca53781aca.js.map"
+      ]
+    },
+    "admin/fullcalendar/index": {
+      "js": [
+        "/packs/js/admin/fullcalendar/index-e9ef8dbe3108a90d041e.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/fullcalendar/index-e9ef8dbe3108a90d041e.js.map"
+      ]
+    },
+    "admin/googleMaps/index": {
+      "js": [
+        "/packs/js/admin/googleMaps/index-feb5cd78aa3d0abb07ea.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/googleMaps/index-feb5cd78aa3d0abb07ea.js.map"
+      ]
+    },
+    "admin/masonry/index": {
+      "js": [
+        "/packs/js/admin/masonry/index-420a599399c7ea1fc1e9.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/masonry/index-420a599399c7ea1fc1e9.js.map"
+      ]
+    },
+    "admin/popover/index": {
+      "js": [
+        "/packs/js/admin/popover/index-f5bbb13e9cb6b2dfc0a7.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/popover/index-f5bbb13e9cb6b2dfc0a7.js.map"
+      ]
+    },
+    "admin/scrollbar/index": {
+      "js": [
+        "/packs/js/admin/scrollbar/index-fbcfce9c53c377681999.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/scrollbar/index-fbcfce9c53c377681999.js.map"
+      ]
+    },
+    "admin/search/index": {
+      "js": [
+        "/packs/js/admin/search/index-c1f9d371901b8e6872f5.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/search/index-c1f9d371901b8e6872f5.js.map"
+      ]
+    },
+    "admin/sidebar/index": {
+      "js": [
+        "/packs/js/admin/sidebar/index-3c33b78126376f9cd1f6.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/sidebar/index-3c33b78126376f9cd1f6.js.map"
+      ]
+    },
+    "admin/skycons/index": {
+      "js": [
+        "/packs/js/admin/skycons/index-f8f3be9217835dff747e.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/skycons/index-f8f3be9217835dff747e.js.map"
+      ]
+    },
+    "admin/utils/index": {
+      "js": [
+        "/packs/js/admin/utils/index-def1f45e32bc521cb530.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/utils/index-def1f45e32bc521cb530.js.map"
+      ]
+    },
+    "admin/vectorMaps/index": {
+      "js": [
+        "/packs/js/admin/vectorMaps/index-585154b62c88ac353a2d.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/vectorMaps/index-585154b62c88ac353a2d.js.map"
+      ]
+    },
+    "admin/vectorMaps/jquery-jvectormap-world-mill": {
+      "js": [
+        "/packs/js/admin/vectorMaps/jquery-jvectormap-world-mill-1d9d72f24c5a45d00f22.js"
+      ],
+      "js.map": [
+        "/packs/js/admin/vectorMaps/jquery-jvectormap-world-mill-1d9d72f24c5a45d00f22.js.map"
+      ]
+    },
+    "application": {
+      "js": [
+        "/packs/js/application-3209d4ad18c80d015d7d.js"
+      ],
+      "js.map": [
+        "/packs/js/application-3209d4ad18c80d015d7d.js.map"
+      ]
+    },
+    "custom": {
+      "js": [
+        "/packs/js/custom-4888e71ee0769c9780dd.js"
+      ],
+      "js.map": [
+        "/packs/js/custom-4888e71ee0769c9780dd.js.map"
+      ]
+    }
+  },
+  "media/images/admin-logo.png": "/packs/media/images/admin-logo-2fa51fb8.png",
+  "media/images/bg.jpg": "/packs/media/images/bg-fd1a1dd6.jpg",
+  "media/images/logo-d.png": "/packs/media/images/logo-d-e0241a6b.png"
+}
