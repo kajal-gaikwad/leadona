@@ -1,6 +1,6 @@
 class Business::Entity < ApplicationRecord
   belongs_to :registration_type
-  has_one :infos
+  has_one :info
   has_many :branches
   has_many :galleries, as: :galleryable
   has_many :working_hours, as: :workable

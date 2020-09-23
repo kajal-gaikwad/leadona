@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
 
   create_table "business_branches", force: :cascade do |t|
     t.string "name"
-    t.boolean "head"
+    t.boolean "head", default: false
     t.string "subdomain"
     t.integer "entity_id"
     t.datetime "created_at", precision: 6, null: false
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
     t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_categories_on_active"
   end
 
   create_table "business_categories_sub_categories", force: :cascade do |t|
@@ -89,13 +90,17 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
   end
 
   create_table "business_entities", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.boolean "active"
-    t.boolean "verified"
-    t.string "registration_type_id"
+    t.string "name", null: false
+    t.text "description", null: false
+    t.boolean "active", default: true, null: false
+    t.boolean "verified", default: false, null: false
+    t.integer "registration_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_entities_on_active"
+    t.index ["name"], name: "index_business_entities_on_name"
+    t.index ["registration_type_id"], name: "index_business_entities_on_registration_type_id"
+    t.index ["verified"], name: "index_business_entities_on_verified"
   end
 
   create_table "business_galleries", force: :cascade do |t|
@@ -120,36 +125,42 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
     t.integer "entity_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["entity_id"], name: "index_business_infos_on_entity_id"
   end
 
   create_table "business_proof_types", force: :cascade do |t|
-    t.string "name"
-    t.boolean "active"
+    t.string "name", null: false
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_proof_types_on_active"
+    t.index ["name"], name: "index_business_proof_types_on_name"
   end
 
   create_table "business_registration_types", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.boolean "active"
+    t.text "description", null: false
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_registration_types_on_active"
+    t.index ["name"], name: "index_business_registration_types_on_name"
   end
 
   create_table "business_roles", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_roles_on_active"
   end
 
   create_table "business_services", force: :cascade do |t|
-    t.string "name"
-    t.boolean "active"
+    t.string "name", null: false
+    t.boolean "active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_services_on_active"
+    t.index ["name"], name: "index_business_services_on_name"
   end
 
   create_table "business_sub_categories", force: :cascade do |t|
@@ -157,13 +168,15 @@ ActiveRecord::Schema.define(version: 2020_09_18_104813) do
     t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_sub_categories_on_active"
   end
 
   create_table "business_themes", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
+    t.boolean "active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["active"], name: "index_business_themes_on_active"
   end
 
   create_table "business_working_hours", force: :cascade do |t|
